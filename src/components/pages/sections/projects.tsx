@@ -4,7 +4,6 @@ import SectionHeading from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import HeadingLine from "@/components/ui/heading-line";
-import env from "@/config/env";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
@@ -13,52 +12,83 @@ import { motion } from "motion/react";
 const Projects = () => {
   const projects = [
     {
-      title: "Developer Portfolio",
+      title: "Crypto Search",
       description:
-        "A personal portfolio website showcasing projects, skills, and contact information.",
-      tags: ["Portfolio", "Fullstack", "Personal"],
-      github: "https://github.com/NotStark/portfolio",
-      image: "/projects/portfolio-screenshot.png",
-      live: env.NEXT_PUBLIC_APP_URL,
-      date: "Sep, 2025",
-      status: "completed",
-    },
-    {
-      title: "Telegram Bot",
-      description: "A telegram group management bot built with Pyrogram.",
-      tags: ["Bot", "Management", "Telegram"],
-      github: "https://github.com/Notstark/TelegramBot",
-      image: "/projects/telegrambot-screenshot.png",
-      live: "https://t.me/HyugaGuardianBot",
-      date: "Oct, 2024",
-      status: "completed",
-    },
-    {
-      title: "Anime Edge",
-      description:
-        "A feature-rich anime streaming platform built with Next.js, offering fast search, curated collections, and a smooth viewing experience.",
-      tags: ["Anime", "Streaming", "Fullstack"],
-      github: null,
-      image: "/projects/animeedge-screenshot.png",
+        "Terminal retro de criptomonedas con red social integrada para traders y entusiastas del crypto.",
+      tags: ["Next.js", "TypeScript", "Tailwind", "PostgreSQL"],
+      github: "https://github.com/Santiago13dev/crypto-search",
+      image: "/projects/crypto-search.png",
       live: null,
-      date: "Dec, 2024",
+      date: "Mayo-2025",
+      status: "completed",
+    },
+    {
+      title: "Premium Catalogo IA 🚀",
+      description:
+        "Una plataforma moderna y completa para descubrir, evaluar y utilizar componentes de IA — frontend en React + Vite y backend en Node/Express con integración para modelos y APIs de terceros.",
+      tags: ["React", "Node.js", "MongoDB", "JavaScript"],
+      github: "https://github.com/Santiago13dev/premiumcatalogoia",
+      image: "/projects/catalogo-IA.Premium.png",
+      live: null,
+      date: "Agosto-2025",
+      status: "completed",
+    },
+    {
+      title: "SismoView",
+      description:
+        "Página web para visualizar simulaciones sísmicas y de tsunami en un globo 3D con estadísticas en tiempo real.",
+      tags: ["React", "Next.js", "Three.js", "Spring Boot", "Java", "TypeScript"],
+      github: "https://github.com/Santiago13dev/SismoView",
+      image: "/projects/SismoView.png",
+      live: null,
+      date: "Agosto-2024",
+      status: "completed",
+    },
+    {
+      title: "crypto-Chat",
+      description:
+        "plataforma de mensajería segura que implementa encriptación de extremo a extremo (E2E) con arquitectura Zero-Knowledge.",
+      tags: ["Jest", "Next.js", "Express", "Spring Boot", "Docker", "TypeScript"],
+      github: "https://github.com/Santiago13dev/criptochat",
+      image: "/projects/cryptoChat.png",
+      live: null,
+      date: "Junio-2025",
+      status: "completed",
+    },
+    {
+      title: "DeepShop",
+      description:
+        "plataforma de e-commerce completa y profesional construida con las últimas tecnologías web.",
+      tags: ["Angular", "Next.js", "Node.js", "Swagger ", "Supabase", "TypeScript"],
+      github: "https://github.com/Santiago13dev/DeepShop",
+      image: "/projects/DeepShop.png",
+      live: null,
+      date: "Octubre-2025",
       status: "completed",
     },
   ];
 
   const tagColors = {
-    Portfolio: "bg-blue-500/10 text-blue-600 border-blue-500/30",
-    Fullstack: "bg-orange-500/10 text-orange-600 border-orange-500/30",
-    Personal: "bg-purple-500/10 text-purple-600 border-purple-500/30",
-    Telegram: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30",
-    Management: "bg-emerald-500/10 text-emerald-600 border-emerald-500/30",
-    Bot: "bg-teal-500/10 text-teal-600 border-teal-500/30",
-    Anime: "bg-pink-500/10 text-pink-600 border-pink-500/30",
-    Streaming: "bg-indigo-500/10 text-indigo-600 border-indigo-500/30",
+    "Next.js": "bg-blue-500/10 text-blue-600 border-blue-500/30",
+    TypeScript: "bg-orange-500/10 text-orange-600 border-orange-500/30",
+    Tailwind: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30",
+    PostgreSQL: "bg-purple-500/10 text-purple-600 border-purple-500/30",
+    React: "bg-blue-400/10 text-blue-500 border-blue-400/30",
+    "Node.js": "bg-green-500/10 text-green-600 border-green-500/30",
+    MongoDB: "bg-emerald-500/10 text-emerald-600 border-emerald-500/30",
+    JavaScript: "bg-yellow-400/10 text-yellow-500 border-yellow-400/30",
+    "Three.js": "bg-black/10 text-gray-700 border-black/30 dark:text-gray-300",
+    "Spring Boot": "bg-green-600/10 text-green-700 border-green-600/30",
+    Java: "bg-red-500/10 text-red-600 border-red-500/30",
+    Express: "bg-gray-500/10 text-gray-600 border-gray-500/30",
+    Python: "bg-yellow-500/10 text-yellow-600 border-yellow-500/30",
+    Django: "bg-green-600/10 text-green-700 border-green-600/30",
+    Firebase: "bg-amber-500/10 text-amber-600 border-amber-500/30",
+    API: "bg-indigo-500/10 text-indigo-600 border-indigo-500/30",
   };
 
   return (
-    <SectionHeading id="projects" text="Projects">
+    <SectionHeading id="projects" text="Proyectos">
       <div className="divide-y">
         {projects.map((project, index) => (
           <motion.div
@@ -88,11 +118,11 @@ const Projects = () => {
 
                     {/* Main image */}
                     <div className="bg-background relative overflow-hidden border-2">
-                      <div className="relative aspect-video overflow-hidden">
+                      <div className="relative h-[400px] overflow-hidden">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                         />
 
                         {/* Overlay gradient on hover */}
@@ -121,7 +151,7 @@ const Projects = () => {
                       )}
                     />
                     <span className="text-muted-foreground font-mono text-xs uppercase">
-                      {project.status}
+                      {project.status === "completed" ? "Completado" : "En Progreso"}
                     </span>
                   </div>
                 </div>
@@ -170,28 +200,29 @@ const Projects = () => {
                       rel="noopener noreferrer"
                     >
                       <Github className="mr-2 h-4 w-4" />
-                      View Code
+                      Ver Código
                       <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                     </a>
                   </Button>
 
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="group/btn border-2 font-medium"
-                    disabled={!project.live}
-                  >
-                    <a
-                      href={project.live || undefined}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {project.live && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="group/btn border-2 font-medium"
                     >
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo
-                      <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                    </a>
-                  </Button>
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Ver Demo
+                        <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                      </a>
+                    </Button>
+                  )}
                 </div>
 
                 {/*  slanted lines */}
@@ -230,7 +261,7 @@ const Projects = () => {
               rel="noopener noreferrer"
             >
               <span className="bg-foreground/40 mr-2 inline-block h-px w-8 transition-all group-hover:w-12" />
-              VIEW ALL PROJECTS ON GITHUB
+              VER TODOS LOS PROYECTOS EN GITHUB
               <span className="bg-foreground/40 ml-2 inline-block h-px w-8 transition-all group-hover:w-12" />
             </a>
           </Button>

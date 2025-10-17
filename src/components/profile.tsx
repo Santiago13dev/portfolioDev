@@ -40,28 +40,28 @@ const Profile = () => {
   return (
     <div className="relative flex justify-center">
       <PixelImage
-        src="/profile.webp"
+        src="/profile.png"
         customGrid={{ rows: 12, cols: 8 }}
         grayscaleAnimation={true}
       />
 
       <div className="absolute top-[120px] left-[25px] md:top-[150px] md:left-[40px]">
         <span className="-mb-2 -ml-2.5 block w-fit -rotate-2 rounded bg-slate-200 px-1.5 py-0.5 text-xs text-black shadow">
-          Focus
+          Enfoque
         </span>
         <ArrowIcon className="w-18 rotate-180 md:w-20" />
       </div>
 
       <div className="absolute top-[120px] right-[5px] md:top-[165px] md:right-[40px]">
         <span className="-mb-2 ml-7 block w-fit -rotate-2 rounded bg-slate-200 px-1.5 py-0.5 text-xs text-black shadow">
-          Resilience
+          Resiliencia
         </span>
         <ArrowIcon className="w-18 scale-x-[-1] -rotate-180 md:w-20" />
       </div>
 
       <div className="absolute top-[50px] right-[5px] md:top-[80px] md:right-[40px]">
         <span className="-mb-2 ml-10 block w-fit -rotate-2 rounded bg-slate-200 px-1.5 py-0.5 text-xs text-black shadow">
-          Vision
+          Visión
         </span>
         <ArrowIcon className="w-18 scale-x-[-1] -rotate-180 md:w-20" />
       </div>

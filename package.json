@@ -1,7 +1,9 @@
 {
-  "name": "next-portfolio",
-  "version": "0.1.0",
+  "name": "kevin-rodriguez-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "author": "Kevin Rodriguez <kevin.rodriguezgomez1308@gmail.com>",
+  "description": "Portfolio personal de Kevin Rodriguez - Desarrollador Full-Stack",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",

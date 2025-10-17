@@ -4,19 +4,12 @@ import Profile from "@/components/profile";
 import { Button } from "@/components/ui/button";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Typewriter } from "@/components/ui/typewriter";
-import { clientApi } from "@/lib/client-api";
 import { cn } from "@/lib/utils";
-import { useQuery } from "@tanstack/react-query";
 import { ArrowDownSquareIcon, ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 
 const Hero = () => {
-  const { data: unamiStats } = useQuery({
-    queryKey: ["pageViews"],
-    queryFn: clientApi.views.getStats,
-  });
-
   return (
     <div className="relative flex flex-col justify-center overflow-hidden border-b pt-12">
       <div className="px-4 pb-6 md:px-8 md:pb-14 lg:px-20">
@@ -73,7 +66,7 @@ const Hero = () => {
               <span className="text-foreground">Hey, I&apos;m </span>
               <span className="relative text-[#8cc2ff] italic">
                 <Typewriter
-                  text={["Siddharth", "Stark"]}
+                  text={["Kevin", "Santiago"]}
                   speed={85}
                   waitTime={1500}
                   deleteSpeed={40}
@@ -89,8 +82,8 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-foreground/60 max-w-2xl text-sm font-light md:text-base"
             >
-              Fullstack developer with a passion for building web applications.
-              I specialize in React, Next.js, Node.js, and TypeScript.
+              Desarrollador Full-Stack apasionado por construir soluciones limpias y escalables.
+              Especializado en React, Next.js, Node.js y TypeScript.
             </motion.p>
 
             <motion.div
@@ -105,7 +98,7 @@ const Hero = () => {
                 className="group/btn border-2 font-medium"
               >
                 <a href={"#contact"}>
-                  Lets Connect
+                  Conectemos
                   <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </a>
               </Button>
@@ -117,7 +110,7 @@ const Hero = () => {
               >
                 <Link href={"/resume.pdf"}>
                   <Download className="size-4 transition-transform group-hover/btn:translate-y-0.5" />
-                  Download resume
+                  Descargar CV
                 </Link>
               </Button>
             </motion.div>
@@ -130,12 +123,12 @@ const Hero = () => {
         <div className="grid grid-cols-2 border md:max-w-3/4 md:border-0 md:border-t md:border-r lg:grid-cols-4">
           {[
             {
-              label: "Portfolio views",
-              value: unamiStats?.data?.pageviews ?? 0,
+              label: "Visitas al portafolio",
+              value: 200,
             },
-            { label: "Years of Experience", value: 2 },
-            { label: "Projects Shipped", value: 8 },
-            { label: "Happy Clients", value: 5 },
+            { label: "Años de experiencia", value: 2 },
+            { label: "Proyectos completados", value: 15 },
+            { label: "Clientes felices", value: 5 },
           ].map((stat, i) => (
             <div
               key={i}

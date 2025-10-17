@@ -3,13 +3,13 @@ import env from "./env";
 
 
 export const siteConfig = {
-    title: "Siddharth Sharma",
-    description: "my personal portfolio website showcasing projects, skills, and other cool stuffs",
+    title: "Kevin Rodriguez",
+    description: "Desarrollador Full-Stack apasionado por construir soluciones limpias y escalables",
     url: env.NEXT_PUBLIC_APP_URL,
-    twitter: "https://x.com/NotStark101",
-    linkedin: "https://www.linkedin.com/404",
+    twitter: "https://x.com/krooooggs",
+    linkedin: "https://www.linkedin.com/in/santiago-rodriguez-97716522b",
     github: `https://github.com/${env.NEXT_PUBLIC_GITHUB_USERNAME}`,
-    email: "yeahamstark@gmail.com",
-    telegram: "https://t.me/EternalVortex"
+    email: "kevin.rodriguezgomez1308@gmail.com",
+    telegram: ""
 
 }

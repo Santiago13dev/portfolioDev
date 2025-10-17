@@ -13,25 +13,25 @@ import { motion } from "motion/react";
 
 const About = () => {
   return (
-    <SectionHeading text="About" id="about" className="overflow-hidden">
+    <SectionHeading text="Sobre mí" id="about" className="overflow-hidden">
       <div className="flex items-center lg:h-[95vh]">
         <div className="relative flex-1 px-4 py-12 md:px-12">
           <h2 className="font-incognito text-2xl font-semibold md:text-5xl lg:text-4xl">
-            Meet the Developer,
+            Conoce al Desarrollador,
             <br />
-            Not Just the Code
+            No Solo al Código
           </h2>
 
           <HeadingLine className="mt-6" lineWidth={40} />
 
-          <Robot className="absolute top-6 -right-8 z-5 w-64 font-mono text-white max-md:scale-x-[-1] md:top-8 md:right-4">
-            <div className="max-md:scale-x-[-1]">Hey👋</div>
+          <Robot className="absolute top-32 right-8 z-5 w-48 font-mono text-white max-md:hidden md:top-36 md:right-12 lg:right-16 lg:top-40">
+            <div>Hey👋</div>
           </Robot>
 
-          <div className="text-foreground/70 bg-muted/20 relative z-10 mx-auto mt-6 max-w-3xl rounded-lg border-2 border-dotted text-sm leading-relaxed backdrop-blur-3xl md:text-base">
-            <div className="p-6">
-              <p className="">
-                I build fast, friendly products that make users smile
+          <div className="text-foreground/70 bg-muted/20 relative z-10 mx-auto mt-12 max-w-3xl space-y-4 rounded-lg border-2 border-dotted text-sm leading-relaxed backdrop-blur-3xl md:text-base">
+            <div className="space-y-4 p-6">
+              <p>
+                Construyo productos rápidos y amigables que hacen sonreír a los usuarios
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-6 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -41,12 +41,12 @@ const About = () => {
                     />
                   </span>
                 </span>
-                —and sometimes their dogs too.
+                —soluciones limpias y escalables.
               </p>
 
-              <p className="">
-                Stack: Next.js, React, TypeScript, Tailwind. Clean APIs, tiny
-                micro‑interactions, big delight
+              <p>
+                Stack: Next.js, React, TypeScript, Node.js, Spring Boot. APIs limpias, 
+                micro-interacciones fluidas, gran experiencia de usuario
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 -rotate-3 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -59,8 +59,9 @@ const About = () => {
                 .
               </p>
 
-              <p className="">
-                Off‑duty: coffee, sketching animations, and One Piece marathons
+              <p>
+                Me apasiona crear experiencias web que combinen funcionalidad con diseño elegante. 
+                Desde visualizaciones 3D con Three.js hasta plataformas de IA
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-3 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -73,9 +74,9 @@ const About = () => {
                 .
               </p>
 
-              <p className="">
-                Best in small teams: quick loops, clear comms, high‑fives after
-                deploy
+              <p>
+                Mejor en equipos pequeños: ciclos rápidos, comunicación clara, 
+                choca esos cinco después del deploy
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 -rotate-2 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -91,7 +92,7 @@ const About = () => {
               </p>
 
               <p>
-                Got a messy brief or a half‑baked idea?
+                ¿Tienes una idea a medio cocinar o un proyecto desafiante?
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-2 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -101,7 +102,7 @@ const About = () => {
                     />
                   </span>
                 </span>
-                Let’s turn it into something real.
+                Convirtámoslo en algo real.
               </p>
             </div>
 
@@ -113,7 +114,7 @@ const About = () => {
                 className="group border-2 font-medium"
               >
                 <a href="#contact">
-                  Contact Me
+                  Contáctame
                   <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </Button>
@@ -121,7 +122,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Left */}
+        {/* Right Card */}
         <div className="relative hidden h-full items-center justify-center border-l md:w-1/2 lg:flex">
           <div className="absolute inset-0 size-full">
             <div className="before:bg-border after:bg-border relative h-full w-full before:absolute before:top-1/2 before:left-0 before:h-0.5 before:w-full after:absolute after:top-0 after:left-1/2 after:h-full after:w-0.5" />
@@ -149,10 +150,10 @@ const About = () => {
                     />
                   </div>
                   <h3 className="font-incognito text-2xl font-semibold">
-                    Siddharth
+                    Kevin Rodriguez
                   </h3>
                   <p className="text-foreground/60 mt-1 font-mono text-sm">
-                    @stark
+                    @Santiago13dev
                   </p>
 
                   {/* Status badges */}
@@ -173,10 +174,10 @@ const About = () => {
                         )}
                       />
                       {!env.NEXT_PUBLIC_AVAILABLE_STATUS
-                        ? "Not Available"
-                        : "Available"}
+                        ? "No Disponible"
+                        : "Disponible"}
                     </Badge>
-                    <Badge variant="outline">2+ Years</Badge>
+                    <Badge variant="outline">2+ Años</Badge>
                     <Badge variant="outline">Full-Stack</Badge>
                   </div>
                 </div>

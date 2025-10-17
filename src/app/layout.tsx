@@ -18,16 +18,19 @@ export const metadata: Metadata = {
   keywords: [
     "portfolio",
     "developer portfolio",
-    "creative",
-    "fullstack",
+    "full stack developer",
     "nextjs",
+    "react",
+    "typescript",
+    "Kevin Rodriguez",
+    "Santiago13dev",
   ],
 
   openGraph: {
     images: [
       {
         url: "/og-image.png",
-        alt: "Stark's Portfolio",
+        alt: "Kevin Rodriguez - Portfolio",
       },
     ],
   },
@@ -42,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body
         className={cn(
           "mx-auto font-sans antialiased",

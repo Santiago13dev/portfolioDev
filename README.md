@@ -1,11 +1,11 @@
 
-# Stark's Portfolio
+# Kevin Rodriguez - Portfolio
 
 ![Portfolio Screenshot](public/projects/portfolio-screenshot.png)
 
-A modern, interactive **[developer portfolio](https://next-portfolio-stark.vercel.app)** built with **Next.js 15**, **Prisma**, and **shadcn/ui**
+Mi portafolio personal moderno e interactivo construido con **Next.js 15**, **Prisma**, y **shadcn/ui**
 
-> This portfolio showcases my work, my projects, and my personality
+> Desarrollador Full-Stack apasionado por construir soluciones limpias y escalables
 
 ---
 
@@ -25,7 +25,7 @@ A modern, interactive **[developer portfolio](https://next-portfolio-stark.verce
 - [Prisma ORM 6](https://www.prisma.io/) 
 - [Better Auth](https://better-auth.dev/)
 - [Zod](https://zod.dev/) — for runtime schema validation
-- [Unami](https://umami.is/) — Analytics
+- [Supabase](https://supabase.com/) — Database
 
 **State & Utilities**
 - [Zustand](https://github.com/pmndrs/zustand)
@@ -40,7 +40,7 @@ A modern, interactive **[developer portfolio](https://next-portfolio-stark.verce
 
 ### Clone the repository
 ```bash
-git clone https://github.com/NotStark/portfolio.git
+git clone https://github.com/Santiago13dev/portfolio.git
 cd portfolio
 ````
 
@@ -84,13 +84,14 @@ Deployed easily via [Vercel](https://vercel.com/) (recommended).
 
 | Platform     | Link                                                             |
 | ------------ | ---------------------------------------------------------------- |
-| 💬 Telegram  | [https://t.me/EternalVortex](https://t.me/EternalVortex)      
-| 🐦 Twitter   | [https://twitter.com/NotStark101](https://twitter.com/NotStark101) |         |
-| 💻 Discord   | `_notstark`                                            |
+| 🐦 Twitter   | [https://x.com/krooooggs](https://x.com/krooooggs) |
+| 💼 LinkedIn  | [linkedin.com/in/santiago-rodriguez-97716522b](https://www.linkedin.com/in/santiago-rodriguez-97716522b) |
+| 📧 Email     | [kevin.rodriguezgomez1308@gmail.com](mailto:kevin.rodriguezgomez1308@gmail.com) |
+| 💻 GitHub    | [github.com/Santiago13dev](https://github.com/Santiago13dev) |
               
 ---
 
-**⭐ If you liked this project, give it a star — it helps a lot!**
+**⭐ Si te gustó este proyecto, dale una estrella — ¡ayuda mucho!**
 
 ---
 

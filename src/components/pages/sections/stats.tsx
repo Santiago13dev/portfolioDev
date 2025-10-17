@@ -70,16 +70,17 @@ const TECH_STACK = {
   ],
   Backend: [
     { name: "Node.js", icon: "/icons/nodejs.svg" },
-    { name: "Bun", icon: "/icons/bunjs.svg" },
+    { name: "Spring Boot", icon: "/icons/spring.svg" },
+    { name: "Java", icon: "/icons/java.svg" },
     { name: "Python", icon: "/icons/python.svg" },
     { name: "MongoDB", icon: "/icons/mongodb.svg" },
-    { name: "Prisma", icon: "/icons/prisma.svg" },
+    { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
   ],
   Tools: [
     { name: "Git", icon: "/icons/git.svg" },
     { name: "VS Code", icon: "/icons/vscode.svg" },
     { name: "Figma", icon: "/icons/figma.svg" },
-    { name: "Notion", icon: "/icons/notion.svg" },
+    { name: "Prisma", icon: "/icons/prisma.svg" },
   ],
 };
 
@@ -645,18 +646,18 @@ const InsightsContent = ({ data }: { data?: GitHubStatsResponse }) => {
 
       {/* Metrics Grid */}
       <div className="grid gap-4 md:grid-cols-2">
-        
+        {/* Repository Breakdown */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="bg-muted/30 rounded-xl border-2 p-5"
         >
-          <h3 className="mb-4 font-semibold">Repository Breakdown</h3>
+          <h3 className="mb-4 font-semibold">Desglose de Repositorios</h3>
           <div className="text-muted-foreground mb-4 text-xs">
             Total:{" "}
             <NumberTicker value={data?.repositories.total ?? 0} delay={0.2} />{" "}
-            repositories
+            repositorios
           </div>
           <div className="space-y-3">
             {repoBreakdown.map((item, i) => (
@@ -667,7 +668,7 @@ const InsightsContent = ({ data }: { data?: GitHubStatsResponse }) => {
                       className="h-2 w-2 rounded-full"
                       style={{ backgroundColor: item.color }}
                     />
-                    <span className="text-muted-foreground">{item.label}</span>
+                    <span className="text-muted-foreground">{item.label === "Original" ? "Originales" : "Forks"}</span>
                   </span>
                   <span className="text-muted-foreground text-xs font-medium">
                     <NumberTicker value={item.value} delay={0.3 + i * 0.1} />% (
@@ -703,13 +704,13 @@ const InsightsContent = ({ data }: { data?: GitHubStatsResponse }) => {
           transition={{ delay: 0.3 }}
           className="bg-muted/30 rounded-xl border-2 p-5"
         >
-          <h3 className="mb-4 font-semibold">Activity Metrics</h3>
+          <h3 className="mb-4 font-semibold">Métricas de Actividad</h3>
           <div className="space-y-4">
             {activityMetrics.map((item, i) => (
               <div key={item.label}>
                 <div className="mb-2 flex items-center justify-between">
                   <span className="text-muted-foreground text-sm font-medium">
-                    {item.label}
+                    {item.label === "Pull Requests" ? "Pull Requests" : "Issues"}
                   </span>
                   <span className="text-muted-foreground text-xs">
                     Total:{" "}
@@ -733,6 +734,31 @@ const InsightsContent = ({ data }: { data?: GitHubStatsResponse }) => {
           </div>
         </motion.div>
       </div>
+
+      {/* Highest Commit Day Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="bg-muted/30 rounded-xl border-2 p-5"
+      >
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="mb-2 font-semibold">Día con Más Commits</h3>
+            <p className="text-muted-foreground text-sm">
+              {dayjs(data?.highestCommitDay.date).format("DD MMMM, YYYY")}
+            </p>
+          </div>
+          <div className="bg-muted rounded-lg border-2 p-4">
+            <div className="text-center">
+              <div className="text-3xl font-bold">
+                <NumberTicker value={data?.highestCommitDay.count ?? 0} delay={0.4} />
+              </div>
+              <p className="text-muted-foreground text-xs">commits</p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 };
