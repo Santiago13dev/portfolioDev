@@ -442,7 +442,7 @@ const HomePage = () => {
           variants={slideInLeft}
           transition={{ delay: 0.1 }}
         >
-          <Logo hover href="/" animationTime={3} className="w-12 md:w-16" />
+          <Logo href="/" className="w-12 md:w-16" />
         </motion.div>
 
         <motion.div
