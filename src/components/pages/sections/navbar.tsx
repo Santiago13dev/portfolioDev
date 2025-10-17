@@ -92,7 +92,7 @@ const Navbar = () => {
           onClick={() => handleNavClick("home")}
         >
           <div className="absolute -top-2 -left-2 h-4 w-4 border-t-2 border-l-2 duration-200 group-hover:-top-1 group-hover:-left-1" />
-          <Logo className="w-14" hover />
+          <Logo className="w-14" />
           <div className="absolute -right-2 -bottom-2 h-4 w-4 border-r-2 border-b-2 duration-200 group-hover:-right-1 group-hover:-bottom-1" />
         </a>
 
