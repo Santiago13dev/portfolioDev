@@ -1,18 +1,19 @@
 import axios from "axios";
 import type { GitHubStatsResponse } from "@/types/github";
-import type { Todo } from "@prisma/client";
 import { ApiResponse, GuestbookEntry, UmamiStats } from "@/types";
-import type { GuestbookEntry as RawGuestbookEntry } from "@prisma/client";
 
-
-
-
+// Mock Todo type
+type Todo = {
+    id: string;
+    text: string;
+    done: boolean;
+    createdAt: Date;
+};
 
 const api = axios.create({
     baseURL: "/api",
     headers: { "Content-Type": "application/json" },
 });
-
 
 export const githubApi = {
     getStats: async () => {
@@ -21,9 +22,6 @@ export const githubApi = {
     },
 };
 
-
-
-
 export const guestbookApi = {
     getEntries: async () => {
         const res = await api.get<ApiResponse<GuestbookEntry[]>>("/guestbook");
@@ -31,7 +29,7 @@ export const guestbookApi = {
     },
 
     createEntry: async (content: string) => {
-        const res = await api.post<ApiResponse<RawGuestbookEntry>>("/guestbook", { content });
+        const res = await api.post<ApiResponse<GuestbookEntry>>("/guestbook", { content });
         return res.data;
     },
 
@@ -40,7 +38,6 @@ export const guestbookApi = {
         return res.data;
     },
 };
-
 
 export const todoApi = {
     getAll: async () => {
@@ -53,11 +50,8 @@ export const todoApi = {
         return res.data;
     },
 
-    update: async (
-        id: string,
-        updates: Partial<Pick<Todo, "text" | "done">>
-    ) => {
-        const res = await api.patch<ApiResponse<Todo>>("/todo", { id, ...updates });
+    update: async (id: string, data: Partial<Pick<Todo, "text" | "done">>) => {
+        const res = await api.patch<ApiResponse<Todo>>("/todo", { id, ...data });
         return res.data;
     },
 
@@ -67,24 +61,21 @@ export const todoApi = {
     },
 
     clearCompleted: async () => {
-        const res = await api.delete<ApiResponse>(`/todo?clearCompleted=true`);
+        const res = await api.delete<ApiResponse>("/todo?clearCompleted=true");
         return res.data;
     },
 };
-
 
 export const viewsApi = {
     getStats: async () => {
         const res = await api.get<ApiResponse<UmamiStats>>("/views");
         return res.data;
-    },
-};
-
+    }
+}
 
 export const clientApi = {
     github: githubApi,
     guestbook: guestbookApi,
     todo: todoApi,
     views: viewsApi,
-
 };
