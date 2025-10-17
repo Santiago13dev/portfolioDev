@@ -4,14 +4,13 @@ import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import prisma from "./prisma";
 import env from "@/config/env";
-import { customSession } from "better-auth/plugins";
 
 
 const baseUrl = env.BETTER_AUTH_URL  
 
 export const auth = betterAuth({
     baseURL: baseUrl,
-    secret: process.env.BETTER_AUTH_SECRET!, // generate with CLI: npx @better-auth/cli secret
+    secret: process.env.BETTER_AUTH_SECRET || "fallback-secret-key",
     trustedOrigins: ["http://localhost:3000", baseUrl],
 
     database: prismaAdapter(prisma, {
@@ -28,31 +27,12 @@ export const auth = betterAuth({
 
     socialProviders: {
         github: {
-            clientId: env.GITHUB_CLIENT_ID,
-            clientSecret: env.GITHUB_CLIENT_SECRET,
+            clientId: env.GITHUB_CLIENT_ID || "dummy",
+            clientSecret: env.GITHUB_CLIENT_SECRET || "dummy",
         },
         google: {
-            clientId: env.GOOGLE_CLIENT_ID,
-            clientSecret: env.GOOGLE_CLIENT_SECRET,
+            clientId: env.GOOGLE_CLIENT_ID || "dummy",
+            clientSecret: env.GOOGLE_CLIENT_SECRET || "dummy",
         }
     },
-
-    plugins: [
-        customSession(async ({ user, session }) => {
-            const { role } = await prisma.user.findUnique({
-                where: { id: session.userId },
-                select: { role: true },
-            }) ?? { role: null }
-
-            return {
-                role: role as "AUTHOR" | "GUEST",
-                user: user,
-                session
-            };
-        }),
-    ]
-
-
-
-
 });
