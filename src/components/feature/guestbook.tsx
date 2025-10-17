@@ -60,13 +60,13 @@ export const Guestbook = () => {
   const { data: session, isPending } = authClient.useSession();
 
   const isLoggedIn = !!session?.user;
-  const isAuthor = session?.role === "AUTHOR";
+  const isAuthor = false; // Temporalmente deshabilitado
 
   const { data: entries, isLoading } = useGuestbookEntries();
 
   const userWithRole = {
     ...(session?.user as User),
-    role: session?.role,
+    role: undefined,
   };
 
   const createEntry = useCreateGuestbookEntry(userWithRole);
